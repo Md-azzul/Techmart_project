@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMart - Premium Storefront</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR (hidden on the login view) -->
+    <nav class="navbar hidden-view" id="navbar">
+        <div class="logo" id="nav-logo" role="button" tabindex="0">⚡ TechMart</div>
+        <ul class="nav-links">
+            <li><a href="#" id="nav-home">Home</a></li>
+            <li><a href="#" id="nav-shop">Shop</a></li>
+            <li><a href="#" id="nav-about">About</a></li>
+            <li><a href="#" id="nav-contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <span class="user-greeting" id="user-greeting"></span>
+            <button class="cart-icon" id="cart-toggle-btn" aria-label="Open cart">
+                🛒 <span id="cart-count">0</span>
+            </button>
+            <button class="logout-btn" id="logout-btn">Log out</button>
+        </div>
+    </nav>
+
+    <!-- VIEW 1: LOGIN / REGISTER -->
+    <div id="login-view" class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-logo">⚡ TechMart</div>
+            <h1 id="auth-title">Log in</h1>
+            <p class="auth-sub" id="auth-sub">Welcome back. Enter your details to continue.</p>
+
+            <form id="auth-form" novalidate>
+                <div class="field hidden-view" id="name-field">
+                    <label for="auth-name">Full name</label>
+                    <input type="text" id="auth-name" autocomplete="name" placeholder="Your name">
+                </div>
+                <div class="field">
+                    <label for="auth-email">Email</label>
+                    <input type="email" id="auth-email" autocomplete="email" placeholder="you@example.com">
+                </div>
+                <div class="field">
+                    <label for="auth-password">Password</label>
+                    <input type="password" id="auth-password" autocomplete="current-password" placeholder="At least 6 characters">
+                </div>
+                <p class="auth-error" id="auth-error" role="alert"></p>
+                <button type="submit" class="btn btn-full" id="auth-submit">Log in</button>
+            </form>
+
+            <p class="auth-switch">
+                <span id="auth-switch-text">New to TechMart?</span>
+                <a href="#" id="auth-switch-link">Create an account</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- VIEW 2: STOREFRONT -->
+    <div id="store-front-view" class="hidden-view">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Discover Next-Gen Gadgets</h1>
+                <p>Upgrade your daily workflow with premium, hand-picked tech essentials.</p>
+                <button class="btn btn-light" id="hero-shop-btn">Shop Collection</button>
+            </div>
+            <div class="hero-image-container">
+                <div class="animated-card" id="hero-card">💻</div>
+            </div>
+        </header>
+
+        <main class="products-section" id="products-section">
+            <h2>Our Products</h2>
+            <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter products by category"></div>
+            <section class="product-grid" id="product-grid"></section>
+        </main>
+    </div>
+
+    <!-- VIEW 3: CART -->
+    <div id="shopping-cart-view" class="hidden-view">
+        <main class="cart-wrapper">
+            <h1 class="cart-title">Your Cart</h1>
+            <div class="cart-layout">
+                <section class="cart-items-list" id="cart-items-list"></section>
+
+                <aside class="cart-summary">
+                    <h2 class="summary-title">Order Summary</h2>
+                    <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+                    <div class="summary-row"><span>Shipping</span><span id="summary-shipping">Free</span></div>
+                    <div class="summary-row summary-total"><span>Total</span><span id="summary-total">$0.00</span></div>
+                    <p class="shipping-note">Free shipping on orders over $100.</p>
+                    <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <!-- VIEW 4: ABOUT PAGE -->
+    <div id="about-view" class="hidden-view">
+        <header class="page-hero">
+            <h1>About TechMart</h1>
+            <p>Hand-picked tech, honest prices, and support that answers.</p>
+        </header>
+
+        <main class="page-wrapper">
+            <section class="page-section">
+                <h2>Our story</h2>
+                <p>TechMart started in 2020 as a small online shelf of gadgets we actually used every day. Too many stores list hundreds of near-identical products, so we decided to sell fewer things and test every one of them first.</p>
+                <p>Today we carry laptops, phones, audio gear, cameras and accessories from brands we trust. If we would not buy it for ourselves, it does not go on the site.</p>
+            </section>
+
+            <section class="stats-row">
+                <div class="stat"><strong>24</strong><span>tested products</span></div>
+                <div class="stat"><strong>50k+</strong><span>orders delivered</span></div>
+                <div class="stat"><strong>4.8/5</strong><span>average rating</span></div>
+                <div class="stat"><strong>30 days</strong><span>easy returns</span></div>
+            </section>
+
+            <section class="page-section">
+                <h2>What we stand for</h2>
+                <div class="value-grid">
+                    <div class="value-card">
+                        <div class="value-icon">✅</div>
+                        <h3>Tested first</h3>
+                        <p>Every product is used by our team for at least two weeks before we list it.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">💬</div>
+                        <h3>Clear pricing</h3>
+                        <p>The price you see is the price you pay. Shipping is free on orders over $100.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🛡️</div>
+                        <h3>Warranty included</h3>
+                        <p>Every item comes with a 12-month warranty and a 30-day return window.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section cta-box">
+                <h2>Ready to upgrade?</h2>
+                <p>Browse the full collection or talk to our team if you need help choosing.</p>
+                <div class="cta-actions">
+                    <button class="btn" id="about-shop-btn">Shop products</button>
+                    <button class="btn btn-outline" id="about-contact-btn">Contact us</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- VIEW 5: CONTACT PAGE -->
+    <div id="contact-view" class="hidden-view">
+        <header class="page-hero">
+            <h1>Contact us</h1>
+            <p>Questions about an order or a product? We reply within one business day.</p>
+        </header>
+
+        <main class="page-wrapper contact-layout">
+            <section class="contact-info">
+                <div class="info-card">
+                    <div class="value-icon">✉️</div>
+                    <div><h3>Email</h3><p>support@techmart.example</p></div>
+                </div>
+                <div class="info-card">
+                    <div class="value-icon">📞</div>
+                    <div><h3>Phone</h3><p>+1 (555) 010-2030</p></div>
+                </div>
+                <div class="info-card">
+                    <div class="value-icon">📍</div>
+                    <div><h3>Address</h3><p>120 Market Street, Suite 4<br>Your City, 00000</p></div>
+                </div>
+                <div class="info-card">
+                    <div class="value-icon">🕒</div>
+                    <div><h3>Support hours</h3><p>Mon to Fri, 9:00 to 18:00<br>Sat, 10:00 to 14:00</p></div>
+                </div>
+            </section>
+
+            <section class="contact-form-card">
+                <h2>Send us a message</h2>
+                <form id="contact-form" novalidate>
+                    <div class="field">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" autocomplete="name" placeholder="Your name">
+                    </div>
+                    <div class="field">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" autocomplete="email" placeholder="you@example.com">
+                    </div>
+                    <div class="field">
+                        <label for="contact-topic">Topic</label>
+                        <select id="contact-topic">
+                            <option>Order status</option>
+                            <option>Returns and refunds</option>
+                            <option>Product question</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" rows="5" placeholder="How can we help?"></textarea>
+                    </div>
+                    <p class="auth-error" id="contact-error" role="alert"></p>
+                    <button type="submit" class="btn btn-full">Send message</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2020 <span class="footer-link">techmart</span>. All Rights Reserved.</p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
