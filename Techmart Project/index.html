@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMart - Premium Storefront</title>
+    <!-- <link rel="stylesheet" href="stylecart.css"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Unified Brand Navbar Navigation Header -->
+    <nav class="navbar">
+        <div class="logo" id="nav-logo" style="cursor: pointer;">⚡ TechMart</div>
+        <ul class="nav-links">
+            <li><a href="#" id="nav-home">Home</a></li>
+            <li><a href="#" id="nav-shop">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <!-- Toggle button to open the cart panel view window -->
+        <div class="cart-icon" id="cart-toggle-btn">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- VIEW 1: HOME & STOREFRONT PANEL INTERFACE -->
+    <div id="store-front-view">
+        <!-- Hero Showcase Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Discover Next-Gen Gadgets</h1>
+                <p>Upgrade your daily workflow with premium, hand-picked tech essentials.</p>
+                <button class="btn" id="hero-shop-btn">Shop Collection</button>
+            </div>
+            <div class="hero-image-container">
+                <div class="animated-card" id="hero-card">💻</div>
+            </div>
+        </header>
+
+        <!-- Main Dynamic Product Grid Section -->
+        <main class="products-section">
+            <h2>Trending Products</h2>
+            <section class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">🎧</div>
+                    <h3>Wireless Headphones</h3>
+                    <p class="price">$199.00</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">⌚</div>
+                    <h3>Smart Watch Series 9</h3>
+                    <p class="price">$299.00</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">🔋</div>
+                    <h3>MagSafe Power Bank</h3>
+                    <p class="price">$49.00</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">⌨</div>
+                    <h3>Mechanical Keyboard</h3>
+                    <p class="price">$129.00</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- VIEW 2: DYNAMIC SHOPPING CART VIEW PANEL -->
+    <div id="shopping-cart-view" class="hidden-view">
+        <main class="cart-wrapper">
+            <h1 class="cart-title">Your Cart</h1>
+            <div class="cart-layout">
+                
+                <!-- Left Side: Interactive Items Table Layout Block -->
+                <section class="cart-items-list">
+                    <div class="cart-item">
+                        <div class="item-details">
+                            <div class="item-icon">🎧</div>
+                            <div class="item-info">
+                                <h3>Wireless Headphones</h3>
+                                <p>Premium Audio Gear</p>
+                                <button class="remove-btn" onclick="alert('Item removal tracking logic can be wired here!')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="updateQty('headphone-qty', -1)">-</button>
+                                <span class="qty-value" id="headphone-qty">1</span>
+                                <button class="qty-btn" onclick="updateQty('headphone-qty', 1)">+</button>
+                            </div>
+                            <div class="item-price">$199.00</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Side: Sticky Check-Out Summary Terminal Box -->
+                <aside class="cart-summary">
+                    <h2 class="summary-title">Order Summary</h2>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>$199.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span style="color: #2ecc71; font-weight: 500;">Free</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span>$199.00</span>
+                    </div>
+                    <button class="checkout-btn" onclick="alert('Proceeding to checkout secure gateway!')">Proceed to Checkout</button>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <!-- Unified Footprint Platform Footer Attribution Row Component -->
+    <footer class="site-footer">
+        <p>&copy; 2026 <span class="footer-link">mohamed azzul</span>. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
